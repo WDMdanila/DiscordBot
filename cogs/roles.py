@@ -1,6 +1,4 @@
-"""
-Roles cog
-"""
+"""Roles cog"""
 
 import discord
 import random
@@ -8,34 +6,25 @@ from discord.ext import commands
 
 
 class Roles(commands.Cog):
-    """
-    Roles cog, contains different role-specific commands
-    Also has some utility commands for members to change their roles
-    """
-
+    """Roles cog, contains different role-specific commands
+    Also has some utility commands for members to change their roles"""
     def __init__(self, bot):
         self.bot = bot
 
     @commands.Cog.listener()
     async def on_ready(self):
-        """
-        Action to be done when Roles cog is loaded
+        """Action to be done when Roles cog is loaded
 
-        :return: None
-        """
-
+        :return: None"""
         print('Roles cog is online')
 
     @commands.command(aliases=['отпетушить'])
     async def rape(self, ctx, *targets: discord.Member):
-        """
-        One member rapes another
+        """One member rapes another
 
         :param ctx: context of command
         :param targets: target of rape. May be a list or a single member
-        :return: None
-        """
-
+        :return: None"""
         end = [
             ', хотя он вроде и так петух...',
             ', готовь мыло.',
@@ -58,14 +47,11 @@ class Roles(commands.Cog):
 
     @commands.command(aliases=['хромосома'])
     async def chromosome(self, ctx, *targets: discord.Member):
-        """
-        Gift a chromosome
+        """Gift a chromosome
 
         :param ctx: context of command
         :param targets: target of gifting. May be a list or a single member
-        :return: None
-        """
-
+        :return: None"""
         end = [
             ', тебе она нужнее',
             ', хотя вроде ничего не изменилось.',
@@ -87,14 +73,11 @@ class Roles(commands.Cog):
 
     @commands.command(aliases=['пакет'])
     async def trash(self, ctx, *targets: discord.Member):
-        """
-        Put a trash bag on the head
+        """Put a trash bag on the head
 
         :param ctx: context of command
         :param targets: target of gifting. May be a list or a single member
-        :return: None
-        """
-
+        :return: None"""
         end = [
             ', а так даже красивее',
             ', хотя вроде ничего не изменилось.',
@@ -117,14 +100,11 @@ class Roles(commands.Cog):
 
     @commands.command(aliases=['я'])
     async def change_my_role(self, ctx, role):
-        """
-        Change the role of message author
+        """Change the role of message author
 
         :param ctx: context of message
         :param role: role to be assigned
-        :return: None
-        """
-
+        :return: None"""
         roles = {
             'овощ': ctx.guild.get_role(695636250140344442),
             'мусор': ctx.guild.get_role(695614165087420416),
@@ -142,15 +122,12 @@ class Roles(commands.Cog):
 
     @commands.command(aliases=['ты'])
     async def change_role(self, ctx, member: discord.Member, role):
-        """
-        Change role of someone else
+        """Change someone else's else
 
         :param ctx: context of command
         :param member: member to get a new role
         :param role: role to be given
-        :return: None
-        """
-
+        :return: None"""
         roles = {
             'овощ': ctx.guild.get_role(695636250140344442),
             'мусор': ctx.guild.get_role(695614165087420416),
@@ -171,11 +148,8 @@ class Roles(commands.Cog):
 
 
 def setup(bot):
-    """
-    Setup a cog
+    """Setup a cog
 
     :param bot: bot for which the cog is set up
-    :return: None
-    """
-
+    :return: None"""
     bot.add_cog(Roles(bot))
