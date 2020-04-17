@@ -1,7 +1,7 @@
 import os
+import json
 from discord.ext import commands
 
-TOKEN = 'Njk1NjM5ODQ1NTI3MjI0MzYw.XodQQA.gewvFXMfhoz4vcxD2H9ypkSBeO8'
 bot = commands.Bot(command_prefix='!')
 
 
@@ -35,7 +35,13 @@ async def reload(ctx, extension):
     bot.load_extension(f"cogs.{extension}")
 
 
-for filename in os.listdir('./cogs'):
-    if filename.endswith('.py'):
-        bot.load_extension(f'cogs.{filename[:-3]}')
-bot.run(TOKEN)
+if __name__ == '__main__':
+    with open('config.json') as cfg:
+        config = json.load(cfg)
+
+    TOKEN = config['token']
+
+    for filename in os.listdir('./cogs'):
+        if filename.endswith('.py'):
+            bot.load_extension(f'cogs.{filename[:-3]}')
+    bot.run(TOKEN)
