@@ -162,5 +162,6 @@ def setup(bot):
     """Setup a cog
 
     :param bot: bot for which the cog is set up
-    :return: None"""
+    :return: None
+    """
     bot.add_cog(Music(bot))

@@ -21,7 +21,8 @@ class Gambling(commands.Cog):
 
         :param ctx: context of command
         :param args: arguments, range may be in style "1-200", prediction - number.
-        :return: None"""
+        :return: None
+        """
         end = {
             True: ['повезло...', 'счастливчик!'],
             False: ['лалка.', 'ебать ты лох!']
@@ -49,7 +50,8 @@ class Gambling(commands.Cog):
 
         :param ctx: context of command
         :param args: words or sentences to choose from
-        :return: None"""
+        :return: None
+        """
         if len(args) < 2:
             await ctx.send(f"{ctx.message.author.mention} слишком мало вариантов для выбора.")
         else:
@@ -61,5 +63,6 @@ def setup(bot):
     """Setup a cog
 
     :param bot: bot for which the cog is set up
-    :return: None"""
+    :return: None
+    """
     bot.add_cog(Gambling(bot))

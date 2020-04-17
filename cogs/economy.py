@@ -20,7 +20,8 @@ class Economy(commands.Cog):
         """Get server members
 
         :param ctx: context of command
-        :return: None"""
+        :return: None
+        """
         for member in ctx.guild.members:
             self.members[member.id] = 100
 
@@ -31,5 +32,6 @@ def setup(bot):
     """Setup a cog
 
     :param bot: bot for which the cog is set up
-    :return: None"""
+    :return: None
+    """
     bot.add_cog(Economy(bot))

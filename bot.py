@@ -18,7 +18,8 @@ async def on_member_join(member):
     """Bot's reaction when someone joins server
 
     :param member: newly joined member
-    :return: None"""
+    :return: None
+    """
     await member.create_dm()
     await member.dm_channel.send(f'{member.name} is ready to suck some dicks!')
 
@@ -30,7 +31,8 @@ async def load(ctx, extension):
 
     :param ctx: context of command (unused)
     :param extension: extension name
-    :return: None"""
+    :return: None
+    """
     bot.load_extension(f"cogs.{extension}")
 
 
@@ -41,7 +43,8 @@ async def unload(ctx, extension):
 
     :param ctx: context of command (unused)
     :param extension: extension name
-    :return: None"""
+    :return: None
+    """
     bot.unload_extension(f"cogs.{extension}")
 
 
@@ -52,7 +55,8 @@ async def reload(ctx, extension):
 
     :param ctx: context of command (unused)
     :param extension: extension name
-    :return: None"""
+    :return: None
+    """
     bot.unload_extension(f"cogs.{extension}")
     bot.load_extension(f"cogs.{extension}")
 

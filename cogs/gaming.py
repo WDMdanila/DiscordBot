@@ -24,7 +24,8 @@ class Gaming(commands.Cog):
 
         :param ctx: context of command
         :param symbol: player symbol
-        :return: None"""
+        :return: None
+        """
         pass
 
     # TODO: Develop actual gaming cog
@@ -34,5 +35,6 @@ def setup(bot):
     """Setup a cog
 
     :param bot: bot for which the cog is set up
-    :return: None"""
+    :return: None
+    """
     bot.add_cog(Gaming(bot))

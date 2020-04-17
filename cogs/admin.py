@@ -22,7 +22,8 @@ class Admin(commands.Cog):
 
         :param ctx: context of command
         :param num: number of messages to be purged
-        :return: None"""
+        :return: None
+        """
         await ctx.channel.purge(limit=num)
 
     @commands.command(aliases=['пидорнуть'])
@@ -32,7 +33,8 @@ class Admin(commands.Cog):
 
         :param ctx: context of command
         :param member: member to be moved
-        :return: None"""
+        :return: None
+        """
         await member.remove_roles(ctx.guild.get_role(695636250140344442),
                                   ctx.guild.get_role(695614165087420416),
                                   ctx.guild.get_role(695933575828209704))
@@ -51,7 +53,8 @@ class Admin(commands.Cog):
 
         :param ctx: context of command
         :param member: member to be kicked out
-        :return: None"""
+        :return: None
+        """
         tmp = await ctx.guild.create_voice_channel('TMP')
         try:
             await member.move_to(tmp, reason='Сори, ты отброс')
@@ -66,7 +69,8 @@ class Admin(commands.Cog):
 
         :param ctx: context of command
         :param member: member to be elevated
-        :return: None"""
+        :return: None
+        """
         await member.remove_roles(ctx.guild.get_role(696412698744717363))
         await member.add_roles(random.choice([ctx.guild.get_role(695636250140344442),
                                               ctx.guild.get_role(695614165087420416),
@@ -79,7 +83,8 @@ class Admin(commands.Cog):
         """Drop a random message using /tts
 
         :param ctx: context of command
-        :return: None"""
+        :return: None
+        """
         scares = ['Raaaaawr',
                   'WOOOOOHOOOO',
                   'Batya pidor',
@@ -96,5 +101,6 @@ def setup(bot):
     """Setup a cog
 
     :param bot: bot for which the cog is set up
-    :return: None"""
+    :return: None
+    """
     bot.add_cog(Admin(bot))

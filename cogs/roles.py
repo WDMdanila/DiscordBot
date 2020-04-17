@@ -7,15 +7,14 @@ from discord.ext import commands
 
 class Roles(commands.Cog):
     """Roles cog, contains different role-specific commands
-    Also has some utility commands for members to change their roles"""
+    Also has some utility commands for members to change their roles
+    """
     def __init__(self, bot):
         self.bot = bot
 
     @commands.Cog.listener()
     async def on_ready(self):
-        """Action to be done when Roles cog is loaded
-
-        :return: None"""
+        """Action to be done when Roles cog is loaded"""
         print('Roles cog is online')
 
     @commands.command(aliases=['отпетушить'])
@@ -24,7 +23,8 @@ class Roles(commands.Cog):
 
         :param ctx: context of command
         :param targets: target of rape. May be a list or a single member
-        :return: None"""
+        :return: None
+        """
         end = [
             ', хотя он вроде и так петух...',
             ', готовь мыло.',
@@ -51,7 +51,8 @@ class Roles(commands.Cog):
 
         :param ctx: context of command
         :param targets: target of gifting. May be a list or a single member
-        :return: None"""
+        :return: None
+        """
         end = [
             ', тебе она нужнее',
             ', хотя вроде ничего не изменилось.',
@@ -77,7 +78,8 @@ class Roles(commands.Cog):
 
         :param ctx: context of command
         :param targets: target of gifting. May be a list or a single member
-        :return: None"""
+        :return: None
+        """
         end = [
             ', а так даже красивее',
             ', хотя вроде ничего не изменилось.',
@@ -104,7 +106,8 @@ class Roles(commands.Cog):
 
         :param ctx: context of message
         :param role: role to be assigned
-        :return: None"""
+        :return: None
+        """
         roles = {
             'овощ': ctx.guild.get_role(695636250140344442),
             'мусор': ctx.guild.get_role(695614165087420416),
@@ -127,7 +130,8 @@ class Roles(commands.Cog):
         :param ctx: context of command
         :param member: member to get a new role
         :param role: role to be given
-        :return: None"""
+        :return: None
+        """
         roles = {
             'овощ': ctx.guild.get_role(695636250140344442),
             'мусор': ctx.guild.get_role(695614165087420416),
@@ -151,5 +155,6 @@ def setup(bot):
     """Setup a cog
 
     :param bot: bot for which the cog is set up
-    :return: None"""
+    :return: None
+    """
     bot.add_cog(Roles(bot))
