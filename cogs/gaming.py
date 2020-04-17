@@ -1,18 +1,16 @@
+import random
 import discord
 from discord.ext import commands
 
-
-class Game:
-    def __init__(self, player):
-        self.started = False
-        self.players = [player]
+SYMBOLS = ['@', '#', '$', '&', '?', '%']
 
 
 class Gaming(commands.Cog):
 
     def __init__(self, bot):
+        self.started = False
+        self.players = {}
         self.bot = bot
-        self.members = {}
 
     @commands.Cog.listener()
     async def on_ready(self):
@@ -20,7 +18,7 @@ class Gaming(commands.Cog):
 
     @commands.command(aliases=['game'])
     @commands.has_role(695621674464182302)
-    async def start_game(self, ctx):
+    async def start_game(self, ctx, symbol=None):
         pass
 
 
