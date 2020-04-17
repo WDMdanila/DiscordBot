@@ -1,4 +1,7 @@
 config.json
+source/
+make.bat
+Makefile
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
