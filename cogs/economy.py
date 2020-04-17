@@ -30,6 +30,7 @@ class Economy(commands.Cog):
         :param ctx: context of command
         :return: None
         """
+
         for member in ctx.guild.members:
             self.members[member.id] = 100
 
