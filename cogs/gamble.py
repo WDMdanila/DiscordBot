@@ -1,3 +1,7 @@
+"""
+Gamble cog
+"""
+
 import random
 from discord.ext import commands
 

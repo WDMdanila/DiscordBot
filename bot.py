@@ -1,3 +1,7 @@
+"""
+Main bot body, all the functionality is imported using cogs
+"""
+
 import os
 import json
 from discord.ext import commands
