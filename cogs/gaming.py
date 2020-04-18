@@ -1,5 +1,4 @@
 """Gaming cog"""
-
 from discord.ext import commands
 
 SYMBOLS = ['@', '#', '$', '&', '?', '%']

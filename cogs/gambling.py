@@ -1,5 +1,4 @@
 """Gambling cog"""
-
 import random
 from discord.ext import commands
 
