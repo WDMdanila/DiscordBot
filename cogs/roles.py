@@ -17,8 +17,8 @@ class Roles(commands.Cog):
         print('Roles cog is online')
 
     @commands.command(aliases=['отпетушить'])
-    async def rape(self, ctx, *targets: discord.Member):
-        """One member rapes another
+    async def fun(self, ctx, *targets: discord.Member):
+        """One member make fun of another
 
         :param ctx: context of command
         :param targets: target of rape. May be a list or a single member

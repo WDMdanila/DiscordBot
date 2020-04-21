@@ -27,7 +27,7 @@ class Admin(commands.Cog):
 
     @commands.command(aliases=['пидорнуть'])
     @commands.has_role(695621674464182302)
-    async def fuck_off(self, ctx, member: discord.Member):
+    async def pwn(self, ctx, member: discord.Member):
         """Move a memeber to a Faggots cast, remove all rights
 
         :param ctx: context of command
@@ -63,7 +63,7 @@ class Admin(commands.Cog):
 
     @commands.command(aliases=['поднять'])
     @commands.has_role(695621674464182302)
-    async def fuck_on(self, ctx, member: discord.Member):
+    async def elevate(self, ctx, member: discord.Member):
         """Elevate user rights back to the normal
 
         :param ctx: context of command
