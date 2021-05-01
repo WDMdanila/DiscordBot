@@ -1,6 +1,7 @@
 """Main body of the bot, all the functionality is imported using cogs"""
 import os
 import json
+from pathlib import Path
 from discord.ext import commands
 
 bot = commands.Bot(command_prefix='!')
@@ -61,12 +62,13 @@ async def reload(ctx, extension):
 
 
 if __name__ == '__main__':
-    with open('config.json') as cfg:
+    script_path = str(Path(__file__).parent.absolute())
+    with open(script_path + '/../config.json') as cfg:
         config = json.load(cfg)
 
     TOKEN = config['token']
 
-    for filename in os.listdir('./cogs'):
+    for filename in os.listdir(script_path + '/cogs'):
         if filename.endswith('.py'):
-            bot.load_extension(f'cogs.{filename[:-3]}')
+            bot.load_extension(f'discord_bot.cogs.{filename[:-3]}')
     bot.run(TOKEN)
